@@ -32,15 +32,63 @@ public class GradesApplication {
         timWhoIsOK.addGrade(78);
         timWhoIsOK.addGrade(79);
 
-        Scanner scanner = new Scanner(System.in);
 
         students.put("HotCajun7", crayfishCarl);
         students.put("LuckyBucky", buckyScarface);
         students.put("FallenAngel-Starfish", terribleTim);
         students.put("Meh6", timWhoIsOK);
 
+
+
+        chooseGit(students);
+
+
+    }
+
+    public static void chooseGit(HashMap<String, Student> students){
+
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Hey, I've got this list of usernames for you to choose from: " + students.keySet());
-        System.out.println("Any of these float your boat? (You have to pick one, sorry.)");
-        String response =
+        System.out.println("Any of these float your boat? (You have to pick one, case-sensitive: sorry.)");
+        String response = scanner.nextLine();
+
+        switch (response){
+            case "HotCajun7":
+                displayInfo(students, response);
+                break;
+            case "LuckyBucky":
+                displayInfo(students, response);
+                break;
+            case "FallenAngel-Starfish":
+                displayInfo(students, response);
+                break;
+            case "Meh6":
+                displayInfo(students, response);
+                break;
+            default:
+                System.out.println("sorry, no student found with that username\nWould you like to see the options again? y/n");
+                String yVn = scanner.nextLine();
+                if(yVn.equalsIgnoreCase("y")) {
+                    chooseGit(students);
+                    break;
+                } else{
+                    System.out.println("goodbye");
+                    break;
+                }
+
+        }
+    }
+    public static void displayInfo(HashMap<String, Student> students,String response){
+        System.out.println(response);
+        System.out.println("Name: " + students.get(response).getName() + " - Github Username: " + response + "\nCurrent Average: " + students.get(response).getGradeAverage());
+        System.out.println("Would you like to see another student? y/n");
+        Scanner scanner = new Scanner(System.in);
+        String yVn = scanner.nextLine();
+        if(yVn.equalsIgnoreCase("y")) {
+            chooseGit(students);
+        } else{
+            System.out.println("goodbye");
+        }
     }
 }
