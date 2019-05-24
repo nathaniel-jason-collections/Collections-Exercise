@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class GradesApplication {
 
+
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
 
@@ -39,14 +40,18 @@ public class GradesApplication {
         students.put("Meh6", timWhoIsOK);
 
 
-
+//call the method that forces the user to choose a terrible GitHub user
         chooseGit(students);
 
 
     }
 
+    //Jason wuz here
+
+    //method takes in hashMap as only parameter so that you can display list of github user names, so user can choose one;
     public static void chooseGit(HashMap<String, Student> students){
 
+        //import scanner for listening for user response
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Hey, I've got this list of usernames for you to choose from: " + students.keySet());
@@ -80,9 +85,11 @@ public class GradesApplication {
         }
     }
     public static void displayInfo(HashMap<String, Student> students,String response){
-        System.out.println(response);
+
+        //students = hashmap; .get(response) = get the key (gitHub user name) and open the treasure box; .getName = pull the name info we want from the box
         System.out.println("Name: " + students.get(response).getName() + " - Github Username: " + response + "\nCurrent Average: " + students.get(response).getGradeAverage());
         System.out.println("Would you like to see another student? y/n");
+
         Scanner scanner = new Scanner(System.in);
         String yVn = scanner.nextLine();
         if(yVn.equalsIgnoreCase("y")) {
