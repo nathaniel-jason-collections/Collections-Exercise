@@ -1,5 +1,7 @@
 package grades;
 
+import util.Input;
+
 import java.util.ArrayList;
 
 public class Student {
@@ -14,6 +16,21 @@ public class Student {
     }
 
     //methods
+    public String getGrades(){
+        String allGrades = "";
+        for (Integer grade: grades) {
+            allGrades += grade + "\n";
+        }
+        return allGrades;
+    }
+
+    public int gradeSum(){
+        int sum = 0;
+        for (Integer grade: grades) {
+            sum += grade;
+        }
+        return sum;
+    }
 
     public String getName(){
         return this.name;

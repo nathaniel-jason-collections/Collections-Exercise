@@ -29,7 +29,5 @@ public class Category {
         this.catName = catName;
     }
 
-    public void setItem(HashMap<String, Integer> item) {
-        this.item = item;
-    }
+//    deleted the hashmap setter.... maybe that was dumb... we will find out when it's time to finalize our list
 }
