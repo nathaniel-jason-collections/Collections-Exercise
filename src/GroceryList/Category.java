@@ -1,5 +1,7 @@
 package GroceryList;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Category {
@@ -19,10 +21,23 @@ public class Category {
         return catName;
     }
 
+    public void displayItems() {
+        ArrayList<String> catItemsList = new ArrayList<>();
+        int i = 0;
+        for (String listItem : item.keySet()) {
+            String addToArray = listItem + " (" + item.get(listItem) + ")";
+            catItemsList.add(addToArray);
+        }
+        Collections.sort(catItemsList, String.CASE_INSENSITIVE_ORDER);
+        for (String karen: catItemsList) {
+            i++;
+            System.out.println(i + ". " + karen + "\n");
+        }
+    }
+
     public HashMap<String, Integer> getItem() {
         return item;
     }
-
 
     //setters
     public void setCatName(String catName) {
