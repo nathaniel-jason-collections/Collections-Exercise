@@ -19,10 +19,17 @@ public class Category {
         return catName;
     }
 
+    public void displayItems() {
+        int i = 0;
+        for (String listItem : item.keySet()) {
+            i++;
+            System.out.println(i + ". " + listItem + " (" + item.get(listItem) + ")\n");;
+        }
+    }
+
     public HashMap<String, Integer> getItem() {
         return item;
     }
-
 
     //setters
     public void setCatName(String catName) {

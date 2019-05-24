@@ -45,7 +45,7 @@ public class GroceryList {
 
     public static void buildGroceryList(HashMap<String, Category> categories) {
         Input input = new Input();
-        System.out.println("Please select a category: ");
+        System.out.println("Please enter a number to select a category: ");
 
 //        here's how to fudge in an iterator for a foreach
         int i = 0;
@@ -76,7 +76,7 @@ public class GroceryList {
                 addItems("Meat",categories);
                 break;
             case 6:
-               /* someFunction();*/
+               finalizeList(categories);
                 break;
             default:
                 System.out.println("that was not one of the choices");
@@ -107,6 +107,13 @@ public class GroceryList {
 
     }
     public static void finalizeList(HashMap<String, Category> categories){
+        for (String category: categories.keySet()) {
+            System.out.println(category + ":\n");
+            Category cat = categories.get(category);
+            cat.displayItems();
+            System.out.println("===========\n");
+
+        }
 
     }
 
