@@ -9,7 +9,7 @@ public class Input {
         this.scanner = new Scanner(System.in);
     }
 
-    String getString(String msg) {
+    public String getString(String msg) {
         System.out.println(msg);
         return this.scanner.nextLine();
     }
@@ -34,7 +34,13 @@ public class Input {
         }
     }
 
+    public int getInt(String msg) {
+
+        return Integer.parseInt(this.getString(msg));
+    }
+
     public int getInt() {
+
         return Integer.parseInt(this.getString("Give me a number: "));
     }
 
