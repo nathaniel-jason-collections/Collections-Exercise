@@ -55,8 +55,8 @@ public class GradesApplication {
         //import scanner for listening for user response
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Hey, I've got this list of usernames for you to choose from:\n" + students.keySet() + "\n or to view info for all students type 'all'");
-        System.out.println("Any of these float your boat? (You have to pick one, case-sensitive: sorry.)");
+        System.out.println("Hey, I've got this list of usernames for you to choose from:\n\n" + students.keySet() + "\n\n or to view info for all students type 'all'");
+        System.out.println("\nAny of these float your boat? (You have to pick one, case-sensitive: sorry.)");
         String response = scanner.nextLine();
 
         switch (response){
@@ -102,6 +102,7 @@ public class GradesApplication {
             System.out.println("goodbye");
         }
     }
+
     public static void seeAll(HashMap<String, Student> students){
         Input input = new Input();
         int choice = input.getInt("What would you like to do?\n1. view all grades for all students\n2. overall class average\n3. display student info and average");

@@ -1,6 +1,6 @@
 package GroceryList;
 import util.Input;
-
+import java.util.Scanner;
 import java.util.HashMap;
 
 public class GroceryList {
@@ -85,10 +85,12 @@ public class GroceryList {
     }
 //    add item and quantity to Category hashmap to later put into array to iterate and sort
     public static void addItems(String key, HashMap<String, Category> categories) {
+        Scanner sc = new Scanner(System.in);
         Input input = new Input();
         String item = input.getString("What " + key + " would you like to add?");
         int quantity = input.getInt("How many do you need?");
 //        turns out we didn't need a setter for this one... here's how you add the item to the hashmap;
+
         categories.get(key).getItem().put(item, quantity);
         System.out.println("you've added " + quantity + " " + item + "(s) to your list!");
 
@@ -102,6 +104,9 @@ public class GroceryList {
             System.out.println("ok, lets continue adding to our list...");
             buildGroceryList(categories);
         }
+
+    }
+    public static void finalizeList(HashMap<String, Category> categories){
 
     }
 
